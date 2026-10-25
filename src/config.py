@@ -14,6 +14,23 @@ MEDIA_TYPE = "jpg"
 
 
 
+PROMPTS = [
+        [
+            "Describe this image.",
+            "List every distinct object you can see, one per line."
+        ],
+        [
+            "How many wine glasses are in this image",
+            "What is the type of the bottle on the left"
+        ],
+        [
+            "Transcribe all visible text exactly as written.",
+            "Transcribe all visible text, and tell me which parts you are unsure about."
+        ]
+    ]
+
+
+
 def gets_all_images(folder_path="data/images"):
     valid_extensions = (".jpg", ".jpeg", ".png", ".gif", ".webp")
     images_list = []
