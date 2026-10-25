@@ -21,7 +21,15 @@ def text_generation():
         if block.type == "text":
             print(block.text)
 
-
+def image_describe_generation():
+    client = Anthropic(api_key=ANTHROPIC_API_KEY)
+    message = client.messages.create(
+        model=DEFAULT_MODEL,
+        messages=[
+            {},
+        ]
+    )
+    pass
 
 
 if __name__ == "__main__":
