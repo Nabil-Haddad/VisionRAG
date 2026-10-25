@@ -6,4 +6,5 @@ from src.generation import text_generation
 
 if __name__ == "__main__":
     print("This is the name function")
-    text_generation()
+    prompt = input("Enter your prompt ")
+    text_generation(prompt)

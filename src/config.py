@@ -19,7 +19,7 @@ def gets_all_images(folder_path="data/images"):
 
     for filename in os.listdir(folder_path):
         if filename.lower().endswith(valid_extensions):
-            images_list.append({folder_path, filename})
+            images_list.append({folder_path, filename ,})
 
     return images_list
 
