@@ -1,6 +1,8 @@
 from anthropic import Anthropic
-from config import ANTHROPIC_API_KEY, DEFAULT_MODEL, gets_all_images
-
+from config import ANTHROPIC_API_KEY, DEFAULT_MODEL, MEDIA_TYPE, gets_all_images
+import os
+import base64
+import mimetypes
 
 def text_generation(content):
     # Initialise the client using the api key
@@ -21,15 +23,53 @@ def text_generation(content):
         if block.type == "text":
             print(block.text)
 
-def image_describe_generation(image, image_label, content):
+
+
+def image_describe_generation(image_file, content, type):
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
     message = client.messages.create(
         model=DEFAULT_MODEL,
+        max_tokens= 1024,
         messages=[
-            {},
+            {
+                "role" : "user",
+                "content" : [
+                    {
+                        "type" : "image",
+                        "source" : {
+                            'type' : 'base64',
+                            'media_type' : type,
+                            'data': image_file
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text" : content
+                    }
+                ]
+            },
         ]
     )
-    pass
+
+    for block in message.content:
+        if block.type == "text":
+            print(block.text)
+
+def get_image_ready(image_name:str , image_folder:str , prompts : list[str]):
+    image_path = os.path.join(image_folder, image_name)
+
+    if not os.path.exists(image_path):
+        print(f"Error: Could not find the image at '{image_path}'. Check your folder and filename.")
+        exit()
+
+    media_type = mimetypes.guess_type(image_path)[0] 
+    with open(image_path, "rb") as image_file:
+        binary_data = image_file.read()
+        base64_image = base64.b64encode(binary_data).decode("utf-8")
+
+
+        for prompt in prompts:
+            image_describe_generation(base64_image, prompt , media_type)
 
 
 if __name__ == "__main__":
@@ -50,16 +90,9 @@ if __name__ == "__main__":
         ]
     ]
 
-    test_array = []
-    test_dict = {}
-    for image , prompt in zip(images , prompts):
-        list_images = list(image)
-        test_dict["image"] = list_images[0]
-        test_dict["image_folder"] = list_images[1]
-        test_dict["prompts"] = prompt
-        test_array.append(test_dict)
+    for image, image_prompts in zip(images, prompts):
+        print(f"\n=== {image['image']} ===")
+        get_image_ready(image["image"], image["image_folder"], image_prompts)
 
-
-    print(test_array[0])
 
 
