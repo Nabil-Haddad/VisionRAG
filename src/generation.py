@@ -3,6 +3,10 @@ from config import ANTHROPIC_API_KEY, DEFAULT_MODEL, PROMPTS, gets_all_images
 import os
 import base64
 import mimetypes
+from utils.save_response import save_results_csv
+
+
+
 
 def text_generation(content):
     # Initialise the client using the api key
@@ -72,13 +76,11 @@ def get_image_ready(image_name:str , image_folder:str , prompts : list[str]):
         prompt_results = []
         for prompt in prompts:
             response = image_describe_generation(base64_image, prompt , media_type)
-            result = {
-                        "image" : image_name,
-                    }
-            result["prompt"] = prompt
-            result["response"] = []
-            result['response'].append(response)
-            prompt_results.append(result)
+            prompt_results.append({
+                "image": image_name,
+                "prompt": prompt,
+                "response": "\n".join(response),
+            })
 
     return prompt_results
             
@@ -92,14 +94,17 @@ if __name__ == "__main__":
     # text_generation('what is 2 + 2')
     images = gets_all_images()
     
+    final_output = []
+    for image, image_prompts in zip(images, PROMPTS):
+        print(f"\n=== {image['image']} ===")
+        final_output.append(get_image_ready(image["image"], image["image_folder"], image_prompts))
 
-    # for i , image, image_prompts in zip(images, PROMPTS):
-    #     print(f"\n=== {image['image']} ===")
-    #     get_image_ready(image["image"], image["image_folder"], image_prompts)
+    save_results_csv(final_output)
+    # response_array = get_image_ready(images[0]["image"], images[0]["image_folder"], PROMPTS[0])
+    # for r in response_array:
+    #     print(r)
 
 
-    response_array = get_image_ready(images[0]["image"], images[0]["image_folder"], PROMPTS[0])
-    for r in response_array:
-        print(r)
+    
 
 

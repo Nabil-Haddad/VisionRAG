@@ -1,5 +1,7 @@
 import os
 from dotenv import load_dotenv
+from pathlib import Path
+import logging
 
 load_dotenv()
 
@@ -11,6 +13,13 @@ DEFAULT_MODEL = "claude-sonnet-5-5"
 
 # Set the media type
 MEDIA_TYPE = "jpg"
+
+# Set the main directory path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# add an assests directory
+
+SHEETS_DIR = BASE_DIR / "assets" / "sheets"
 
 
 
@@ -47,5 +56,6 @@ def gets_all_images(folder_path="data/images"):
 
 if __name__ == "__main__":
     print(gets_all_images())
-    
+    print(BASE_DIR)
+    print(SHEETS_DIR)
     

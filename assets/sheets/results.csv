@@ -1,0 +1,106 @@
+image,prompt,response
+desk_image.jpg,Describe this image.,"This is a stock photo of a modern office or co-working space. It has a shallow depth of field, so the background is softly blurred.
+
+**Foreground**
+- A light wooden table runs across the bottom of the frame. It has visible grain and a few knots.
+- On the left is a small potted plant with bright green leaves. The pot is cream or beige with a textured, ribbed pattern.
+- On the right is a tablet with an attached keyboard case, propped up and angled slightly away from the viewer. The screen is dark.
+- A dark object is partly visible in the bottom-right corner. It could be another device or a bag.
+
+**Midground**
+- A blue upholstered chair sits behind the table, slightly left of center.
+
+**Background**
+- Floor-to-ceiling glass walls and partitions with dark frames, all out of focus.
+- Industrial-style pendant lights hang from the ceiling on the upper right.
+- Cool gray and blue tones dominate the background.
+
+**Overall impression**
+The palette is cool blues and grays against warm wood, with the green plant as an accent. The composition leaves a lot of open space, which suggests it was made as a template or mockup image where text or products could be added. An iStock watermark in the lower right credits the photographer as ""nathaphat."""
+desk_image.jpg,"List every distinct object you can see, one per line.","- Wooden table (with visible wood grain and knots)
+- Potted plant (green leafy plant)
+- Textured woven-style plant pot (beige/cream)
+- Blue upholstered chair
+- Tablet (standing upright)
+- Magic-style keyboard case/stand (attached to the tablet)
+- Keyboard keys (on the case)
+- Trackpad (on the keyboard case)
+- Dark object in the bottom right corner (possibly a device or bag, partially cropped)
+- Pendant lamp (upper right, larger)
+- Pendant lamp (smaller, below and to the left of the first)
+- Glass partition walls (blurred, in the background)
+- Glass door with a handle (blurred, center-left)
+- Dark door or window frames/mullions (vertical, left side)
+- Ceiling or recessed lights (reflected in the glass)
+- iStock watermark with the credit text ""nathaphat""
+- Image ID number ""1342704371"" (bottom left)"
+galsses.jpg,How many wine glasses are in this image,"There are **5 wine glasses** in the image:
+
+1. The large glass in the center foreground.
+2. The glass at the top right, with a tall stem.
+3. The glass at the right edge, partly cropped.
+4. The glass at the top left, behind the wine bottle.
+5. A glass cut off at the far left edge. Its bowl is visible partway down and its base is at the bottom left corner. I counted these as one glass, since the stem length fits, but they could be two.
+
+The cracked-glass candle holder on the left is not a wine glass, so I didn't count it."
+galsses.jpg,What is the type of the bottle on the left,"The bottle on the left is a bottle of **Merlot**, a red wine. The back label says:
+
+- **St. Francis** (the winery, St. Francis Winery)
+- **Merlot**
+- **Sonoma County 2021**
+
+The bottle has a dark glass body and a red capsule (foil) over the neck. Its shape is the classic **Bordeaux style**, with high, straight shoulders. That is the usual bottle for Merlot, Cabernet Sauvignon, and similar red wines."
+product_label.jpg,Transcribe all visible text exactly as written.,"**MAY TAKE UP TO 4 HOURS TO FEEL FULL EFFECTS**
+
+**Nutrition Facts**
+Serving size: 1 piece
+Serving Per Container: 15
+
+**Amount Per Serving**
+**Calories** 12
+% Daily Value
+**Total Fat** 0g — 0%
+**Sodium** <1mg — <1%
+**Total Carbohydrate** 3g — 1%
+Sugars 2g
+**Protein** <1g
+**Δ8THC** — 30mg
+
+**Ingredients:** Corn Syrup, Sugar, Gelatin, Lactic Acid, Citric Acid, Hemp Extract, Pectin, Fumaric Acid, Artificial Flavors & Colors: FD&C Red #40, FD&C Yellow #6, FD&C Yellow #5, FD&C Blue #1, Titanium Dioxide.
+
+Delta 8 is a naturally occuring cannabinoid found in hemp, also known as Delta 8 THC. It's an isomer of both CBD and Delta 9 THC. It exists naturally and is extracted from hemp during THC remediation.
+
+**Gluten-free**
+**100% Hemp Derived**
+Contains <0.3% Δ9THC
+
+**PLEASE TAKE RESPONSIBLY.**
+
+DO NOT USE OR TAKE MORE THAN THE RECOMMENDED SERVING SIZE UNLESS RECOMMENDED BY A DOCTOR.
+
+DO NOT DRIVE OR OPERATE MACHINERY WHEN USING THIS PRODUCT. DO NOT USE IF UNDER 21, NURSING, OR PREGNANT. KEEP OUT OF REACH [cut off]
+
+BEST RESULTS, TAKE ON A [cut off]
+
+The bottom lines are cut off in the photo, so the text there is incomplete."
+product_label.jpg,"Transcribe all visible text, and tell me which parts you are unsure about.","## Transcription
+
+**Top headline:**
+MAY TAKE UP TO 4 HOURS TO FEEL FULL EFFECTS
+
+**Nutrition Facts panel:**
+- Nutrition Facts
+- Serving size: 1 piece
+- Serving Per Container: 15
+- Amount Per Serving
+- Calories 12
+- % Daily Value
+- Total Fat 0g — 0%
+- Sodium <1mg — <1%
+- Total Carbohydrate 3g — 1%
+- Sugars 2g
+- Protein <1g
+- Δ8THC — 30mg
+
+**Ingredients (right side):**
+Ingredients: Corn Syrup, Sugar, Gelatin, Lactic Acid,"
